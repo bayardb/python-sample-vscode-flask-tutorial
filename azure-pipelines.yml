@@ -16,7 +16,8 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    /usr/bin/python3 -m pip install --upgrade pip
-    /usr/bin/python3 pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
+    pip install --upgrade pip pipenv && \
+	  pipenv --rm || true && \
+	  pipenv lock && \
+	  pipenv sync
+  displayName: 'pipenv'
