@@ -17,7 +17,7 @@ steps:
 
 - script: |
     pip install --upgrade pip pipenv && \
-	  pipenv --rm || true && \
-	  pipenv lock && \
-	  pipenv sync
+    pipenv --rm || true && \
+    pipenv lock && \
+    pipenv sync
   displayName: 'pipenv'
